@@ -76,10 +76,10 @@ class Album {
         this.images = images
     }
 
-    fun getCoverImage() : Image? {
-        if(images != null) {
+    fun getCoverImage(): Image? {
+        if (images != null) {
             for (image in images!!) {
-                if(image.type?.startsWith("image")!!) {
+                if (image.type?.startsWith("image")!!) {
                     return image
                 }
             }
@@ -89,6 +89,18 @@ class Album {
 
     fun isImageAlbum(): Boolean {
         return isAlbum != null && isAlbum == true && getCoverImage() != null
+    }
+
+    fun extractImages(): ArrayList<String> {
+        val list = ArrayList<String>();
+        if (images != null) {
+            for (image in images!!) {
+                if (image.type?.startsWith("image")!!) {
+                    list.add(image.link!!)
+                }
+            }
+        }
+        return list;
     }
 
     override fun toString(): String {

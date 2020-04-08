@@ -9,4 +9,7 @@ public class Constant {
     public static final String API_BASE_URL = "https://api.imgur.com/";
 
     public static final String UNKNOWN_API_ERROR = "Unexpected response was received!";
+
+    public static final String GALLERY_IMAGES = "com.imgur.android.gallery.GalleryActivity.images";
+    public static final String GALLERY_TITLE = "com.imgur.android.gallery.GalleryActivity.title";
 }

@@ -17,6 +17,7 @@ import com.imgur.android.album.AlbumAdapter
 import com.imgur.android.album.AlbumClickListener
 import com.imgur.android.album.AlbumViewModel
 import com.imgur.android.data.Album
+import com.imgur.android.gallery.GalleryActivity
 import kotlinx.android.synthetic.main.activity_album.*
 import org.koin.android.ext.android.inject
 
@@ -33,7 +34,7 @@ class AlbumActivity : AppCompatActivity() {
         attachObservers()
         setupRecyclerAdapter()
 
-        viewModel.start("")
+        viewModel.start("cats")
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -74,6 +75,7 @@ class AlbumActivity : AppCompatActivity() {
         viewModel.albumClickListener = object : AlbumClickListener {
             override fun onAlbumClick(album: Album) {
                 Log.d(TAG, "onAlbumClick album=" + album)
+                startActivity(GalleryActivity.getIntent(this@AlbumActivity, album.title!!, album.extractImages()))
             }
         }
     }
