@@ -5,19 +5,20 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.imgur.android.R
 import com.imgur.android.ablum.AlbumActivity
+import org.koin.android.ext.android.inject
 
 class SplashActivity : AppCompatActivity() {
-    private lateinit var viewModel: SplashViewModel
+    private val viewModel: SplashViewModel by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_splash)
 
-        viewModel = SplashViewModel()
         viewModel.showing.observe(this, Observer { aBoolean ->
             if (!aBoolean!!) {
                 startActivity(AlbumActivity.getIntent(this@SplashActivity))
+                finish()
             }
         })
     }
