@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:background="?android:attr/selectableItemBackground"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+    <ImageView
+            android:src="@drawable/image_icon"
+            android:layout_width="@dimen/album_thumb_size"
+            android:layout_height="@dimen/album_thumb_size"
+            android:scaleType="centerCrop"
+            android:id="@+id/albumThumbIv"/>
+
+    <TextView
+            android:id="@+id/albumTitleTv"
+            android:layout_width="match_parent"
+            android:textSize="@dimen/text_size_medium"
+            tools:text="Starting to look like my cats"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/generic_space_medium"/>
+
+</LinearLayout>

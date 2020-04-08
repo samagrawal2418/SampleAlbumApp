@@ -76,6 +76,21 @@ class Album {
         this.images = images
     }
 
+    fun getCoverImage() : Image? {
+        if(images != null) {
+            for (image in images!!) {
+                if(image.type?.startsWith("image")!!) {
+                    return image
+                }
+            }
+        }
+        return null
+    }
+
+    fun isImageAlbum(): Boolean {
+        return isAlbum != null && isAlbum == true && getCoverImage() != null
+    }
+
     override fun toString(): String {
         return "Album(id=$id, title=$title, description=$description, cover=$cover, link=$link, ups=$ups, downs=$downs, points=$points, score=$score, views=$views, commentCount=$commentCount, favoriteCount=$favoriteCount, imagesCount=$imagesCount, isAlbum=$isAlbum, datetime=$datetime, tags=$tags, images=$images)"
     }

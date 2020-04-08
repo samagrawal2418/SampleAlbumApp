@@ -1,6 +1,7 @@
 package com.imgur.android.data.source.remote
 
 import com.imgur.android.Constant
+import com.imgur.android.data.Album
 import com.imgur.android.data.error.APIError
 import com.imgur.android.data.source.RemoteDataSource
 import com.imgur.android.data.source.remote.retrofit.RetrofitFactory
@@ -21,7 +22,16 @@ class RemoteDataSourceImpl : RemoteDataSource {
             try {
                 val response = request.await()
                 if (response.isSuccessful) {
-                    callback.onAlbumsLoaded(response.body()?.data, null)
+                    val albums = response.body()?.data
+                    val list = ArrayList<Album>()
+                    if (albums != null) {
+                        for (album in albums) {
+                            if(album.isImageAlbum()) {
+                                list.add(album)
+                            }
+                        }
+                    }
+                    callback.onAlbumsLoaded(list, null)
                 } else {
                     callback.onAlbumsLoaded(null, parseError(response))
                 }
