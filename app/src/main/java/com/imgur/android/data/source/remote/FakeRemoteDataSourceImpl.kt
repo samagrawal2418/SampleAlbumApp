@@ -6,6 +6,9 @@ import com.imgur.android.data.Image
 import com.imgur.android.data.Tag
 import com.imgur.android.data.source.RemoteDataSource
 
+/**
+ * Fake data class for testing as well as local UI development
+ */
 class FakeRemoteDataSourceImpl : RemoteDataSource {
     private val WEB_SERVICE_DELAY: Long = 2000;
     private val HANDLER: Handler = Handler()

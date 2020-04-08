@@ -6,7 +6,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.imgur.android.Constant
-import com.imgur.android.album.AlbumClickListener
 import com.imgur.android.data.Album
 import com.imgur.android.data.error.APIError
 import com.imgur.android.data.source.RemoteDataSource
@@ -18,20 +17,27 @@ class AlbumViewModel(private val repository: Repository) : ViewModel() {
 
     private val handler = Handler();
 
+    //Live data for showing progress indicator
     private val _dataLoading = MutableLiveData<Boolean>()
     val dataLoading: LiveData<Boolean>
         get() = _dataLoading
 
+    //Live data for showing error message
     private val _error = MutableLiveData<String>()
     val error: LiveData<String>
         get() = _error
 
+    //Live data for showing album images
     private val _albums = MutableLiveData<List<Album>>()
     val albums: LiveData<List<Album>>
         get() = _albums
 
+    //listener's object for handling album item click
     var albumClickListener: AlbumClickListener? = null
 
+    /**
+     * First function to start list loading
+     */
     fun start(query: String) {
         if(query.length == 0) {
             setList(ArrayList())
@@ -49,6 +55,9 @@ class AlbumViewModel(private val repository: Repository) : ViewModel() {
         }
     }
 
+    /**
+     * Search album with given string.
+     */
     fun search(query: String) {
         handler.removeCallbacksAndMessages(null)
         handler.postDelayed(Runnable {

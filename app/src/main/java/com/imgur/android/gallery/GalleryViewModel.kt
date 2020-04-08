@@ -6,7 +6,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.imgur.android.data.source.Repository
 
-
+/**
+ * Viewmodel for handling gallery image functionality
+ */
 class GalleryViewModel(private val repository: Repository) : ViewModel() {
     private val TAG = "GalleryViewModel"
 

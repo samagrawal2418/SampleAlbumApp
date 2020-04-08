@@ -13,7 +13,9 @@ import com.imgur.android.R
 import kotlinx.android.synthetic.main.activity_gallery.*
 import org.koin.android.ext.android.inject
 
-
+/**
+ * Activity class to display images inside album.
+ */
 class GalleryActivity : AppCompatActivity() {
     private val TAG = "GalleryActivity"
 
@@ -32,11 +34,17 @@ class GalleryActivity : AppCompatActivity() {
         viewModel.setList(intent.getStringArrayListExtra(Constant.GALLERY_IMAGES))
     }
 
+    /**
+     * Basic recyclerview setup like layout manager and adapter
+     */
     private fun setupRecyclerAdapter() {
         galleryRv.layoutManager = GridLayoutManager(this, 2)
         galleryRv.adapter = GalleryAdapter(viewModel)
     }
 
+    /**
+     * Subscribe to the viewmodel events
+     */
     private fun attachObservers() {
         viewModel.images.observe(this, Observer {
             val adapter = galleryRv.adapter as GalleryAdapter

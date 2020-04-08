@@ -6,17 +6,14 @@ import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.GridLayoutManager
 import com.imgur.android.Constant
 import com.imgur.android.R
 import com.imgur.android.util.ImageHelper
-import kotlinx.android.synthetic.main.activity_gallery.*
 import kotlinx.android.synthetic.main.activity_image_viewer.*
-import kotlinx.android.synthetic.main.gallery_item.view.*
-import org.koin.android.ext.android.inject
 
-
+/**
+ * General purpose image viewer class. To launch this activity call static method getIntent with required parameters.
+ */
 class ImageViewerActivity : AppCompatActivity() {
     private val TAG = "ImageViewerActivity"
 

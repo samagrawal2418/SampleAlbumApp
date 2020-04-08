@@ -1,14 +1,12 @@
 package com.imgur.android.data.source.remote.retrofit
 
-import com.imgur.android.BuildConfig
-import com.imgur.android.Constant
+import com.imgur.android.data.Album
+import com.imgur.android.data.source.remote.response.OuterResponse
 import kotlinx.coroutines.Deferred
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
-import com.imgur.android.data.Album
-import com.imgur.android.data.source.remote.response.OuterResponse
 
 interface RetrofitService {
     @GET("/{api_version}/gallery/search")

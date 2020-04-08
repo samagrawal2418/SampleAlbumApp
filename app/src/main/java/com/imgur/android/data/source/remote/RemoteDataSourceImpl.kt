@@ -12,7 +12,9 @@ import retrofit2.Converter
 import retrofit2.Response
 import java.io.IOException
 
-
+/**
+ * This class implements all APIs required and provided data.
+ */
 class RemoteDataSourceImpl : RemoteDataSource {
 
     override fun getAlbums(query: String, callback: RemoteDataSource.GetAlbumCallback) {
@@ -26,7 +28,7 @@ class RemoteDataSourceImpl : RemoteDataSource {
                     val list = ArrayList<Album>()
                     if (albums != null) {
                         for (album in albums) {
-                            if(album.isImageAlbum()) {
+                            if (album.isImageAlbum()) {
                                 list.add(album)
                             }
                         }
@@ -41,6 +43,9 @@ class RemoteDataSourceImpl : RemoteDataSource {
         }
     }
 
+    /**
+     * Parse general purpose error response
+     */
     fun parseError(response: Response<*>): APIError? {
         val converter: Converter<ResponseBody, APIError> = RetrofitFactory.createRetrofit()
             .responseBodyConverter(APIError::class.java, arrayOfNulls<Annotation>(0))

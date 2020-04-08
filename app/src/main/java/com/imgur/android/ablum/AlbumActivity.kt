@@ -21,7 +21,9 @@ import com.imgur.android.gallery.GalleryActivity
 import kotlinx.android.synthetic.main.activity_album.*
 import org.koin.android.ext.android.inject
 
-
+/**
+ * Activity used to display a list of albums
+ */
 class AlbumActivity : AppCompatActivity() {
     private val TAG = "AlbumActivity"
 
@@ -57,6 +59,9 @@ class AlbumActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
+    /**
+     * Stats listing viewmodel's events so that it can make changes
+     */
     private fun attachObservers() {
         viewModel.dataLoading.observe(
             this,
@@ -80,12 +85,18 @@ class AlbumActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Setup adapter and spacing between items in recyclerview
+     */
     private fun setupRecyclerAdapter() {
         albumRv.layoutManager = LinearLayoutManager(this)
         albumRv.adapter = AlbumAdapter(viewModel)
         albumRv.addItemDecoration(getItemDivider())
     }
 
+    /**
+     * Create basic item decorator which allows image drawable between items.
+     */
     private fun getItemDivider(): DividerItemDecoration {
         val divider = ContextCompat.getDrawable(this, R.drawable.album_divider)
         val decoration = DividerItemDecoration(this, DividerItemDecoration.VERTICAL)

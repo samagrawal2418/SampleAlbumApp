@@ -3,6 +3,9 @@ package com.imgur.android.data.error
 import com.imgur.android.Constant
 import com.squareup.moshi.Json
 
+/**
+ * General purpose API error handler class
+ */
 open class APIError(
     @field:Json(name = "error")
     var error: String? = null,

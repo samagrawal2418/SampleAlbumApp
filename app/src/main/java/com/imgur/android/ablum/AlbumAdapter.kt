@@ -10,6 +10,9 @@ import com.imgur.android.data.Album
 import com.imgur.android.util.ImageHelper
 import kotlinx.android.synthetic.main.album_item.view.*
 
+/**
+ * Album adapter to display album items
+ */
 class AlbumAdapter(private val viewModel: AlbumViewModel) :
     RecyclerView.Adapter<AlbumAdapter.ViewHolder>() {
     private var albums: List<Album> = ArrayList()
@@ -25,6 +28,9 @@ class AlbumAdapter(private val viewModel: AlbumViewModel) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) =
         holder.bind(albums[position], viewModel.albumClickListener)
 
+    /**
+     * Update lists and notify recyclerview to update changes
+     */
     fun setList(albums: List<Album>) {
         this.albums = albums
         notifyDataSetChanged()
