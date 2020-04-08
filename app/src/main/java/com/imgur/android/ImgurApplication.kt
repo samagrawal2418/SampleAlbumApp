@@ -36,6 +36,6 @@ class ImgurApplication: Application() {
     }
 
     companion object {
-        public lateinit var context: Context
+        lateinit var context: Context
     }
 }

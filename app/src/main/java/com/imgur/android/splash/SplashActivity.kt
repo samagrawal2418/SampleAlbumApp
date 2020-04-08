@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.imgur.android.R
-import com.imgur.android.ablum.AlbumActivity
+import com.imgur.android.album.AlbumActivity
 import org.koin.android.ext.android.inject
 
 class SplashActivity : AppCompatActivity() {

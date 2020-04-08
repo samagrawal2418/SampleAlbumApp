@@ -31,7 +31,7 @@ object ImageHelper {
         ImageLoader.getInstance().init(config.build())
     }
 
-    fun getImageDio(): DisplayImageOptions {
+    private fun getImageDio(): DisplayImageOptions {
         return DisplayImageOptions.Builder()
             .showImageOnLoading(R.drawable.image_icon)
             .showImageForEmptyUri(R.drawable.image_icon)

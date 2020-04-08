@@ -16,7 +16,7 @@ open class APIError(
 ) {
 
     fun getMessage(): String {
-        return (if (error == null) "" else error) as String;
+        return (if (error == null) "" else error) as String
     }
 
     override fun toString(): String {
@@ -31,7 +31,7 @@ open class APIError(
             return APIError(error)
         }
         fun createError(t: Throwable) : APIError {
-            return APIError(if(t?.localizedMessage != null) t.localizedMessage else Constant.UNKNOWN_API_ERROR)
+            return APIError(if(t.localizedMessage != null) t.localizedMessage else Constant.UNKNOWN_API_ERROR)
         }
     }
 }

@@ -25,7 +25,7 @@ class GalleryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_gallery)
 
-        supportActionBar?.title = intent.getStringExtra(Constant.GALLERY_TITLE);
+        supportActionBar?.title = intent.getStringExtra(Constant.GALLERY_TITLE)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         attachObservers()
@@ -53,7 +53,7 @@ class GalleryActivity : AppCompatActivity() {
 
         viewModel.galleryClickListener = object : GalleryClickListener {
             override fun onImageClick(image: String) {
-                Log.d(TAG, "onImageClick image=" + image)
+                Log.d(TAG, "onImageClick image=$image")
                 startActivity(ImageViewerActivity.getIntent(this@GalleryActivity, image))
             }
         }

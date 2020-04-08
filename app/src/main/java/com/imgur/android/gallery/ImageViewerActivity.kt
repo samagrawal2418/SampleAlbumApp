@@ -24,8 +24,8 @@ class ImageViewerActivity : AppCompatActivity() {
         supportActionBar?.title = getString(R.string.image_viewer)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        val image = intent.getStringExtra(Constant.IMAGE_VIEWER_IMAGE);
-        Log.d(TAG, "onCreate image=" + image)
+        val image = intent.getStringExtra(Constant.IMAGE_VIEWER_IMAGE)
+        Log.d(TAG, "onCreate image=$image")
         ImageHelper.loadCenterCropImage(fullImageTiv, image)
     }
 
@@ -38,7 +38,7 @@ class ImageViewerActivity : AppCompatActivity() {
         fun getIntent(context: Context, image: String): Intent {
             val intent = Intent(context, ImageViewerActivity::class.java)
             intent.putExtra(Constant.IMAGE_VIEWER_IMAGE, image)
-            return intent;
+            return intent
         }
     }
 }

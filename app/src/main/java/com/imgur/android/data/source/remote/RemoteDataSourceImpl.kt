@@ -46,7 +46,7 @@ class RemoteDataSourceImpl : RemoteDataSource {
     /**
      * Parse general purpose error response
      */
-    fun parseError(response: Response<*>): APIError? {
+    private fun parseError(response: Response<*>): APIError? {
         val converter: Converter<ResponseBody, APIError> = RetrofitFactory.createRetrofit()
             .responseBodyConverter(APIError::class.java, arrayOfNulls<Annotation>(0))
 
