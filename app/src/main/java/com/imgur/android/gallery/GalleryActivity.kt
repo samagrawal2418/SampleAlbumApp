@@ -46,8 +46,7 @@ class GalleryActivity : AppCompatActivity() {
         viewModel.galleryClickListener = object : GalleryClickListener {
             override fun onImageClick(image: String) {
                 Log.d(TAG, "onImageClick image=" + image)
-//                startActivity(GalleryActivity.getIntent(this@GalleryActivity, album.extractImages()))
-//                finish()
+                startActivity(ImageViewerActivity.getIntent(this@GalleryActivity, image))
             }
         }
     }
@@ -62,7 +61,7 @@ class GalleryActivity : AppCompatActivity() {
             val intent = Intent(context, GalleryActivity::class.java)
             intent.putExtra(Constant.GALLERY_TITLE, title)
             intent.putStringArrayListExtra(Constant.GALLERY_IMAGES, images)
-            return intent;
+            return intent
         }
     }
 }

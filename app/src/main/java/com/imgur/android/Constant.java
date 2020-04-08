@@ -12,4 +12,6 @@ public class Constant {
 
     public static final String GALLERY_IMAGES = "com.imgur.android.gallery.GalleryActivity.images";
     public static final String GALLERY_TITLE = "com.imgur.android.gallery.GalleryActivity.title";
+
+    public static final String IMAGE_VIEWER_IMAGE = "com.imgur.android.gallery.ImageViewerActivity.image";
 }

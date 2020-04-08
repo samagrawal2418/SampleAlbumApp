@@ -4,4 +4,5 @@
     <string name="search_albums">Search Albums</string>
     <string name="no_albums_found">No Albums Found.</string>
     <string name="image_search_hint">Type something to search image in imgur database.</string>
+    <string name="image_viewer">Image Viewer</string>
 </resources>
