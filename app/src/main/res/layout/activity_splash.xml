@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+
+    <TextView
+            android:textSize="@dimen/text_size_xlarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:shadowRadius="@integer/text_shadow_large"
+            android:shadowColor="@color/text_shadow"
+            android:shadowDx="@integer/text_shadow_medium"
+            android:shadowDy="@integer/text_shadow_medium"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="@string/imgur_album"/>
+
+</FrameLayout>
